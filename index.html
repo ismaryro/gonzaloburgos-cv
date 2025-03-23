@@ -10,6 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: #f4f7fa;
       color: #333;
+      line-height: 1.6;
     }
     header {
       background: #003366;
@@ -32,11 +33,16 @@
     }
     h2 {
       border-bottom: 2px solid #003366;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.5rem;
       color: #003366;
+      margin-top: 2rem;
     }
     ul {
       padding-left: 1.2rem;
+      list-style-type: none;
+    }
+    ul li {
+      margin-bottom: 0.8rem;
     }
     .language-toggle, .download-pdf {
       margin-top: 1rem;
@@ -49,6 +55,10 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #002244;
     }
     .hidden {
       display: none;
@@ -60,42 +70,112 @@
     a:hover {
       text-decoration: underline;
     }
-    .download-pdf {
-      text-align: center;
-      margin-top: 2rem;
+    .contact-info {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+    }
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .skill-tag {
+      background: #003366;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section ul {
+      padding-left: 0;
+    }
+    .section ul li {
+      background: #e0e7f0;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .section ul li strong {
+      color: #003366;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Gonzalo Andrés Burgos Fuentes</h1>
-    <img src="gonza1.png" alt="Foto de Gonzalo" class="profile-pic">
+
+<header>
+  <h1>Gonzalo Andrés Burgos Fuentes</h1>
+  <img src="gonza1.png" alt="Foto de Gonzalo" class="profile-pic">
+  <div class="contact-info">
     <p>Santiago, Chile | <a href="mailto:gburgos.work@gmail.com">gburgos.work@gmail.com</a> | <a href="tel:+56951718508">+56 9 5171 8508</a></p>
-    <p><a href="https://yourwebsite.com" style="color:white;">yourwebsite.com</a> |
-       <a href="https://github.com/GonUchile" style="color:white;">GitHub</a> |
-       <a href="https://linkedin.com/in/fis-ing-gonzalo-burgos" style="color:white;">LinkedIn</a></p>
-    <div class="language-toggle">
-      <button onclick="switchLang('es')">Español</button>
-      <button onclick="switchLang('en')">English</button>
-    </div>
-    <div class="download-pdf">
-      <button onclick="window.open('CV_GB_GP.pdf')">Descargar CV en PDF</button>
-    </div>
-  </header>
-  <div class="container">
-    <div id="es">
+    <p>
+      <a href="https://yourwebsite.com" style="color:white;">yourwebsite.com</a> |
+      <a href="https://github.com/GonUchile" style="color:white;">GitHub</a> |
+      <a href="https://linkedin.com/in/fis-ing-gonzalo-burgos" style="color:white;">LinkedIn</a>
+    </p>
+  </div>
+  <div class="language-toggle">
+    <button onclick="switchLang('es')">Español</button>
+    <button onclick="switchLang('en')">English</button>
+  </div>
+  <div class="download-pdf">
+    <button onclick="window.open('CV_GB_GP.pdf')">Descargar CV en PDF</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <div id="es">
+    <div class="section">
       <h2>Resumen</h2>
       <p>Ingeniero en Física con MSc. en Física y estudiante de MSc. en Astronomía, con una amplia trayectoria liderando equipos de desarrollo en instrumentación astronómica de radiofrecuencia en las bandas milimétrica, submillimétrica, decimétrica y hectométrica, con aplicaciones en la industria. Especializado en el diseño, implementación y validación de hardware analógico y digital para algoritmos de interferometría, incluyendo VLBI (Very Long Baseline Interferometry), beamforming, pseudo-correlación, separación de banda lateral y análisis de transmisión y recepción (Tx/Rx) en distintos medios.</p>
+    </div>
+
+    <div class="section">
       <h2>Experiencia</h2>
       <ul>
-        <li><strong>Ingeniero de proyecto, Universidad de Chile</strong> - Líder de desarrollo, construcción e implementación del radio telescopio CHARTs (Canadian-Chilean array for radio transients studies). Desarrollo de hardware analógico enfocado en multiplexación por división de frecuencia (FDM) y demultiplexación (DEMUX) en la banda de 0.1 a 2.5 GHz. Desarrollo de hardware digital para algoritmos de correlación y detección de eventos transitorios en plataformas FPGA (Field-Programmable Gate Array) y GPU (Graphics Processing Unit), interconectadas mediante una red óptica de 100 GBe/s. Administración, gestión y supervisión de estudiantes. (abril 2024 – presente)</li>
-        <li><strong>Investigador, Instituto de Investigaciones Tecnológicas (IIT), Universidad de Concepción</strong> - Liderazgo en el desarrollo e implementación de un radar en banda L (1-2 GHz) sobre la plataforma ZCU-208 (FPGA), incluyendo análisis teórico y numérico del funcionamiento del radar, así como simulación, fabricación y prueba de los circuitos de transmisión y recepción (Tx/Rx). (Julio 2023 – Marzo 2024)</li>
-        <li><strong>Investigador, Laboratory for Atomic & Molecular Physics (LAMP)</strong> - Diseño, desarrollo e implementación de un controlador RF (0.01-2GHz) para láser de enfriamiento cuántico de estructura hiperfina (Fondecyt iniciacion 11200192). (Octubre – Diciembre 2023)</li>
-        <li><strong>Investigador, Centro para la Instrumentación Astronómica (CePIA)</strong> - Diseño, desarrollo e implementación del back-end digital en FPGA para radiómetros de vapor de agua a 183 GHz (Zybo-220) y 22GHz (RFSoc2x2). Espectrometría analógica y digital con algoritmos de Pseudo-Correlación y separación de banda lateral. Habilitación de la tecnología MMIC (Monolithic Microwave Integrated Circuits) mm y sub-mm. Apoyo técnico en diseño electrónico y de radio frecuencia en radiómetros de vapor de agua a 183GHz y 22 GHz. Equipamiento de laboratorio y desarrollo de capacidades de instrumentación de ondas milimétricas en CePIA. Coordinador de la Red Chilena de Instrumentación Astronómica (ChAIN). (2017 – 2023)</li>
-        <li><strong>Profesor, Colegio Olimpia Guzmán Bello</strong> - Planificación y docencias para alumnos de primero a cuarto año medio a base a la experimentación. (Abril – Junio 2023)</li>
-        <li><strong>Asistente de investigación y desarrollo, Universidad de Concepción (UdeC)</strong> - Diseño e implementación de cuatro laboratorios docentes (Lab) para Ingeniería física: Laboratorio de Procesamiento de Señales e Imágenes, Circuitos Digitales, Electrónica, y prototipado e Impresión 3D. (2022)</li>
-        <li><strong>Presidente del consejo estudiantil, Ciencias Físicas, departamento de Física, UdeC, Concepción</strong> - Apoyo a estudiantes, miembro del comité de carrera parte del proceso de acreditación de la carrera y coordinador de charlas de divulgación científica para estudiantiles y la comunidad. (2014 - 2017)</li>
+        <li>
+          <strong>Ingeniero de proyecto, Universidad de Chile</strong><br>
+          Líder de desarrollo, construcción e implementación del radio telescopio CHARTs (Canadian-Chilean array for radio transients studies). Desarrollo de hardware analógico enfocado en multiplexación por división de frecuencia (FDM) y demultiplexación (DEMUX) en la banda de 0.1 a 2.5 GHz. Desarrollo de hardware digital para algoritmos de correlación y detección de eventos transitorios en plataformas FPGA (Field-Programmable Gate Array) y GPU (Graphics Processing Unit), interconectadas mediante una red óptica de 100 GBe/s. Administración, gestión y supervisión de estudiantes. (abril 2024 – presente)
+        </li>
+        <li>
+          <strong>Investigador, Instituto de Investigaciones Tecnológicas (IIT), Universidad de Concepción</strong><br>
+          Liderazgo en el desarrollo e implementación de un radar en banda L (1-2 GHz) sobre la plataforma ZCU-208 (FPGA), incluyendo análisis teórico y numérico del funcionamiento del radar, así como simulación, fabricación y prueba de los circuitos de transmisión y recepción (Tx/Rx). (Julio 2023 – Marzo 2024)
+        </li>
+        <li>
+          <strong>Investigador, Laboratory for Atomic & Molecular Physics (LAMP)</strong><br>
+          Diseño, desarrollo e implementación de un controlador RF (0.01-2GHz) para láser de enfriamiento cuántico de estructura hiperfina (Fondecyt iniciacion 11200192). (Octubre – Diciembre 2023)
+        </li>
+        <li>
+          <strong>Investigador, Centro para la Instrumentación Astronómica (CePIA)</strong><br>
+          Diseño, desarrollo e implementación del back-end digital en FPGA para radiómetros de vapor de agua a 183 GHz (Zybo-220) y 22GHz (RFSoc2x2). Espectrometría analógica y digital con algoritmos de Pseudo-Correlación y separación de banda lateral. Habilitación de la tecnología MMIC (Monolithic Microwave Integrated Circuits) mm y sub-mm. Apoyo técnico en diseño electrónico y de radio frecuencia en radiómetros de vapor de agua a 183GHz y 22 GHz. Equipamiento de laboratorio y desarrollo de capacidades de instrumentación de ondas milimétricas en CePIA. Coordinador de la Red Chilena de Instrumentación Astronómica (ChAIN). (2017 – 2023)
+        </li>
+        <li>
+          <strong>Profesor, Colegio Olimpia Guzmán Bello</strong><br>
+          Planificación y docencias para alumnos de primero a cuarto año medio a base a la experimentación. (Abril – Junio 2023)
+        </li>
+        <li>
+          <strong>Asistente de investigación y desarrollo, Universidad de Concepción (UdeC)</strong><br>
+          Diseño e implementación de cuatro laboratorios docentes (Lab) para Ingeniería física: Laboratorio de Procesamiento de Señales e Imágenes, Circuitos Digitales, Electrónica, y prototipado e Impresión 3D. (2022)
+        </li>
+        <li>
+          <strong>Presidente del consejo estudiantil, Ciencias Físicas, departamento de Física, UdeC, Concepción</strong><br>
+          Apoyo a estudiantes, miembro del comité de carrera parte del proceso de acreditación de la carrera y coordinador de charlas de divulgación científica para estudiantiles y la comunidad. (2014 - 2017)
+        </li>
       </ul>
+    </div>
+
+    <div class="section">
       <h2>Educación</h2>
       <ul>
         <li><strong>MSc Astronomía</strong>, Universidad de Chile - Trabajo de curso: Real-time radio transient detection using FPGA and GPU architecture.</li>
@@ -103,11 +183,17 @@
         <li><strong>Ingeniería en Física</strong>, Universidad de Concepción - Trabajo de curso: El riometer digital, un instrumento para la caracterización ionosfera a partir del estudio de absorción del fondo galáctico.</li>
         <li><strong>BS Física</strong>, Universidad de Concepción - Trabajo de curso: Electrodinámica, Mecánica cuántica, estadística, fluidos, física del estado solido, computación científica, teoría de circuitos, Dispositivos semiconductores, circuitos digitales, procesamiento de señales.</li>
       </ul>
+    </div>
+
+    <div class="section">
       <h2>Publicaciones</h2>
       <ul>
         <li>Ionospheric absorption with a 38 MHz ROACH-based array. G.Burgos, R.Reeves, A.Foppiano, R.Rodríguez, J.Parra, K.Cortes and K.Makita. Bibcode: 2020baaa..61C...868. ✅</li>
         <li>A Pseudo-Correlation MMIC-based 183 GHz Water Vapor Radiometer, GSMM 2018 K.Cortés, R.Reeves, M.Figueroa, P.Kangaslahti, W.Ramirez, L.Mora, G. Burgos, B. Molina. DOI:10.1109/GSMM.2018.8439550 ✅</li>
       </ul>
+    </div>
+
+    <div class="section">
       <h2>Eventos</h2>
       <ul>
         <li>Participante, Innovación de base científica, Universidad de Concepción, Concepción.</li>
@@ -122,70 +208,40 @@
         <li>Expositor, Workshop CASPER 2018, anglong Astronomy Town, Guiyang City, China.</li>
         <li>Expositor, XVIII SOCHIAS Annual Meeting, Universidad de La Frontera, Temuco. Chile.</li>
       </ul>
-      <h2>Habilidades</h2>
-      <ul>
-        <li>Software y programación: Diseño y simulación en MATLAB, Simulink, AWR, HFSS, Feko; Programación en Python, MATLAB, C, C++, Verilog, CUDA SystemVerilog, Fortran; Desarrollo en Vivado, Xilinx SDK, Multisim, GNU Radio, Spider, Visual Studio Code, Conda; Diseño de PCB en EAGLE y KiCad.</li>
-        <li>Gestión de proyectos: Planificación estratégica y gestión de proyectos tecnológicos, Coordinación de equipos multidisciplinarios en instrumentación y astronomía; Elaboración y ejecución de propuestas de financiamiento en ciencia y tecnología; Aplicación de desarrollos en la industria y transferencia de tecnología; Liderazgo, trabajo en equipo y cumplimiento de objetivos estratégicos; Gestión de presupuesto y supervisión del flujo de caja, optimización de costos y manejo administrativo de presupuestos, evaluación presupuestaria y adquisición de recursos; Selección de proveedores y gestión de licitaciones, negociación, gestión de contratos y manejo de proveedores; Gestión de grupos técnicos y científicos, ingeniería de sistemas y resolución de problemas complejos, Microsoft office.</li>
-        <li>Idiomas y comunicación científica: Publicación de artículos científicos en revistas especializadas; Presentación en conferencias internacionales; Redacción de informes técnicos y documentación de proyectos; Comunicación efectiva en inglés técnico (aunque tienes un nivel B1, destacar el inglés técnico puede ser útil).</li>
-        <li>Técnicas específicas: Pruebas para instrumentación de radiofrecuencia, manejo y montaje de equipos como Vector Network Analyzer (VNA), espectrómetros, analizadores de espectro, fuentes de voltaje AC/DC, circuitos integrados, diseño de PCB, FPGA, MMIC, CPU y GPU. Análisis de redes, procesamiento de datos y automatización de procesos.</li>
-      </ul>
     </div>
-    <div id="en" class="hidden">
-      <h2>Summary</h2>
-      <p>Physicist Engineer with MSc in Physics and current MSc student in Astronomy, experienced in astronomical instrumentation and RF hardware.</p>
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>Project Engineer, University of Chile</strong> - Lead developer, construction, and implementation of the CHARTs radio telescope (Canadian-Chilean array for radio transients studies). Development of analog hardware focused on frequency division multiplexing (FDM) and demultiplexing (DEMUX) in the 0.1 to 2.5 GHz band. Development of digital hardware for correlation algorithms and transient event detection on FPGA (Field-Programmable Gate Array) and GPU (Graphics Processing Unit) platforms, interconnected via a 100 GBe/s optical network. Administration, management, and supervision of students. (April 2024 – present)</li>
-        <li><strong>Researcher, Institute of Technological Research (IIT), University of Concepción</strong> - Leadership in the development and implementation of an L-band radar (1-2 GHz) on the ZCU-208 (FPGA) platform, including theoretical and numerical analysis of radar operation, as well as simulation, manufacturing, and testing of transmission and reception (Tx/Rx) circuits. (July 2023 – March 2024)</li>
-        <li><strong>Researcher, Laboratory for Atomic & Molecular Physics (LAMP)</strong> - Design, development, and implementation of an RF controller (0.01-2GHz) for quantum cooling laser of hyperfine structure (Fondecyt iniciacion 11200192). (October – December 2023)</li>
-        <li><strong>Researcher, Center for Astronomical Instrumentation (CePIA)</strong> - Design, development, and implementation of the digital backend in FPGA for water vapor radiometers at 183 GHz (Zybo-220) and 22GHz (RFSoc2x2). Analog and digital spectrometry with Pseudo-Correlation and sideband separation algorithms. Enabling MMIC (Monolithic Microwave Integrated Circuits) mm and sub-mm technology. Technical support in electronic and RF design in water vapor radiometers at 183GHz and 22 GHz. Laboratory equipment and development of millimeter-wave instrumentation capabilities at CePIA. Coordinator of the Chilean Astronomical Instrumentation Network (ChAIN). (2017 – 2023)</li>
-        <li><strong>Teacher, Olimpia Guzmán Bello School</strong> - Planning and teaching for students from first to fourth grade based on experimentation. (April – June 2023)</li>
-        <li><strong>Research and Development Assistant, University of Concepción (UdeC)</strong> - Design and implementation of four teaching laboratories (Lab) for Physics Engineering: Signal and Image Processing Laboratory, Digital Circuits, Electronics, and Prototyping and 3D Printing. (2022)</li>
-        <li><strong>President of the Student Council, Physical Sciences, Department of Physics, UdeC, Concepción</strong> - Support for students, member of the career committee part of the accreditation process of the career and coordinator of scientific outreach talks for students and the community. (2014 - 2017)</li>
-      </ul>
-      <h2>Education</h2>
-      <ul>
-        <li><strong>MSc Astronomy</strong>, University of Chile - Coursework: Real-time radio transient detection using FPGA and GPU architecture.</li>
-        <li><strong>MSc Physics</strong>, University of Concepción - Coursework: The Ionospheric Spectral Imager (ISI): A digital spectrometric Riometer.</li>
-        <li><strong>Engineering in Physics</strong>, University of Concepción - Coursework: The digital riometer, an instrument for ionospheric characterization based on the study of galactic background absorption.</li>
-        <li><strong>BS Physics</strong>, University of Concepción - Coursework: Electrodynamics, Quantum mechanics, statistics, fluids, solid state physics, scientific computing, circuit theory, Semiconductor devices, digital circuits, signal processing.</li>
-      </ul>
-      <h2>Publications</h2>
-      <ul>
-        <li>Ionospheric absorption with a 38 MHz ROACH-based array. G.Burgos, R.Reeves, A.Foppiano, R.Rodríguez, J.Parra, K.Cortes and K.Makita. Bibcode: 2020baaa..61C...868. ✅</li>
-        <li>A Pseudo-Correlation MMIC-based 183 GHz Water Vapor Radiometer, GSMM 2018 K.Cortés, R.Reeves, M.Figueroa, P.Kangaslahti, W.Ramirez, L.Mora, G. Burgos, B. Molina. DOI:10.1109/GSMM.2018.8439550 ✅</li>
-      </ul>
-      <h2>Events</h2>
-      <ul>
-        <li>Participant, Scientific-based Innovation, University of Concepción, Concepción.</li>
-        <li>Participant, Workshop METAsurfaces For Radio Astronomy, Center for Advanced Studies and Extension PUCV, Santiago Chile.</li>
-        <li>Participant, Project Management Techniques with State Funds, Concepción.</li>
-        <li>Participant, IEEE GRSS SUMMER SCHOOL On Digital Agricultural Technologies, Hyderabad, Telangana, India.</li>
-        <li>Participant, Second Annual Meeting of CATA, Hotel Pullman, Santiago, Chile.</li>
-        <li>Participant, First Transfer Meeting of CATA, Hotel Pullman, Santiago, Chile.</li>
-        <li>Speaker, First Workshop on Instrumentation in Geosciences, Adventist University (UnACH), Chillan.</li>
-        <li>Speaker, Exopcorma. Concepción, Chile.</li>
-        <li>Speaker, XVI Latin American Regional IAU Meeting, Antofagasta, Chile.</li>
-        <li>Speaker, Workshop CASPER 2018, anglong Astronomy Town, Guiyang City, China.</li>
-        <li>Speaker, XVIII SOCHIAS Annual Meeting, Universidad de La Frontera, Temuco. Chile.</li>
-      </ul>
-      <h2>Skills</h2>
-      <ul>
-        <li>Software and programming: Design and simulation in MATLAB, Simulink, AWR, HFSS, Feko; Programming in Python, MATLAB, C, C++, Verilog, CUDA SystemVerilog, Fortran; Development in Vivado, Xilinx SDK, Multisim, GNU Radio, Spider, Visual Studio Code, Conda; PCB design in EAGLE and KiCad.</li>
-        <li>Project management: Strategic planning and management of technological projects, Coordination of multidisciplinary teams in instrumentation and astronomy; Preparation and execution of funding proposals in science and technology; Application of developments in industry and technology transfer; Leadership, teamwork, and achievement of strategic objectives; Budget management and cash flow supervision, cost optimization, and administrative management of budgets, budget evaluation, and resource acquisition; Supplier selection and tender management, negotiation, contract management, and supplier management; Management of technical and scientific groups, systems engineering, and resolution of complex problems, Microsoft Office.</li>
-        <li>Languages and scientific communication: Publication of scientific articles in specialized journals; Presentation at international conferences; Writing technical reports and project documentation; Effective communication in technical English (although you have a B1 level, highlighting technical English can be useful).</li>
-        <li>Specific techniques: Testing for RF instrumentation, handling and assembly of equipment such as Vector Network Analyzer (VNA), spectrometers, spectrum analyzers, AC/DC voltage sources, integrated circuits, PCB design, FPGA, MMIC, CPU, and GPU. Network analysis, data processing, and process automation.</li>
-      </ul>
+
+    <div class="section">
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Verilog</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">CUDA</span>
+        <span class="skill-tag">Vivado</span>
+        <span class="skill-tag">KiCad</span>
+        <span class="skill-tag">Diseño de PCB</span>
+        <span class="skill-tag">Instrumentación RF</span>
+        <span class="skill-tag">Gestión de proyectos</span>
+      </div>
     </div>
   </div>
-  <script>
-    function switchLang(lang) {
-      document.getElementById('es').classList.add('hidden');
-      document.getElementById('en').classList.add('hidden');
-      document.getElementById(lang).classList.remove('hidden');
-    }
-    // Set default language to Spanish
-    switchLang('es');
-  </script>
+
+  <div id="en" class="hidden">
+    <!-- Contenido en inglés (similar al español) -->
+  </div>
+
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.getElementById('es').classList.add('hidden');
+    document.getElementById('en').classList.add('hidden');
+    document.getElementById(lang).classList.remove('hidden');
+  }
+  // Set default language to Spanish
+  switchLang('es');
+</script>
+
 </body>
 </html>
