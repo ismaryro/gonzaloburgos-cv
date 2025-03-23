@@ -11,12 +11,16 @@
       background: #f4f7fa;
       color: #333;
       line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
     }
     header {
-      background: #003366;
+      background: rgba(0, 51, 102, 0.8); /* Fondo semitransparente */
       color: white;
       padding: 2rem;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
     .profile-pic {
       width: 150px;
@@ -30,6 +34,11 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente para el contenido */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     h2 {
       border-bottom: 2px solid #003366;
@@ -137,9 +146,56 @@
       border-radius: 5px;
       margin-bottom: 0.5rem;
     }
+    .summary {
+      font-size: 1.1rem;
+      font-style: italic;
+      text-align: justify;
+    }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      object-fit: cover;
+    }
+    .banner {
+      background: rgba(0, 51, 102, 0.9); /* Fondo semitransparente */
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .banner button {
+      background: white;
+      color: #003366;
+      font-weight: bold;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .banner button:hover {
+      background: #f0f0f0;
+    }
+    .banner video {
+      margin-top: 1rem;
+      max-width: 100%;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
+
+<!-- Video de fondo en loop -->
+<video class="video-background" autoplay muted loop>
+  <source src="background-video.mp4" type="video/mp4">
+  Tu navegador no soporta videos HTML5.
+</video>
 
 <header>
   <h1>Gonzalo Andrés Burgos Fuentes</h1>
@@ -166,126 +222,29 @@
   <div id="es">
     <div class="section">
       <h2>Resumen</h2>
-      <p style="text-align: justify;">Ingeniero en Física con MSc. en Física y estudiante de MSc. en Astronomía, con una amplia trayectoria liderando equipos de desarrollo en instrumentación astronómica de radiofrecuencia en las bandas milimétrica, submillimétrica, decimétrica y hectométrica, con aplicaciones en la industria. Especializado en el diseño, implementación y validación de hardware analógico y digital para algoritmos de interferometría, incluyendo VLBI (Very Long Baseline Interferometry), beamforming, pseudo-correlación, separación de banda lateral y análisis de transmisión y recepción (Tx/Rx) en distintos medios.</p>
+      <p class="summary">Ingeniero en Física con MSc. en Física y estudiante de MSc. en Astronomía, con una amplia trayectoria liderando equipos de desarrollo en instrumentación astronómica de radiofrecuencia en las bandas milimétrica, submillimétrica, decimétrica y hectométrica, con aplicaciones en la industria. Especializado en el diseño, implementación y validación de hardware analógico y digital para algoritmos de interferometría, incluyendo VLBI (Very Long Baseline Interferometry), beamforming, pseudo-correlación, separación de banda lateral y análisis de transmisión y recepción (Tx/Rx) en distintos medios.</p>
     </div>
 
-    <div class="section">
-      <h2>Experiencia</h2>
-      <ul>
-        <li class="experience-item">
-          <strong>Ingeniero de proyecto, Universidad de Chile</strong> <em>(abril 2024 – presente)</em><br>
-          Líder de desarrollo, construcción e implementación del radio telescopio CHARTs (Canadian-Chilean array for radio transients studies). Desarrollo de hardware analógico enfocado en multiplexación por división de frecuencia (FDM) y demultiplexación (DEMUX) en la banda de 0.1 a 2.5 GHz. Desarrollo de hardware digital para algoritmos de correlación y detección de eventos transitorios en plataformas FPGA (Field-Programmable Gate Array) y GPU (Graphics Processing Unit), interconectadas mediante una red óptica de 100 GBe/s. Administración, gestión y supervisión de estudiantes.
-        </li>
-        <li class="experience-item">
-          <strong>Investigador, Instituto de Investigaciones Tecnológicas (IIT), Universidad de Concepción</strong> <em>(Julio 2023 – Marzo 2024)</em><br>
-          Liderazgo en el desarrollo e implementación de un radar en banda L (1-2 GHz) sobre la plataforma ZCU-208 (FPGA), incluyendo análisis teórico y numérico del funcionamiento del radar, así como simulación, fabricación y prueba de los circuitos de transmisión y recepción (Tx/Rx).
-        </li>
-        <li class="experience-item">
-          <strong>Investigador, Laboratory for Atomic & Molecular Physics (LAMP)</strong> <em>(Octubre – Diciembre 2023)</em><br>
-          Diseño, desarrollo e implementación de un controlador RF (0.01-2GHz) para láser de enfriamiento cuántico de estructura hiperfina (Fondecyt iniciacion 11200192).
-        </li>
-        <li class="experience-item">
-          <strong>Investigador, Centro para la Instrumentación Astronómica (CePIA)</strong> <em>(2017 – 2023)</em><br>
-          Diseño, desarrollo e implementación del back-end digital en FPGA para radiómetros de vapor de agua a 183 GHz (Zybo-220) y 22GHz (RFSoc2x2). Espectrometría analógica y digital con algoritmos de Pseudo-Correlación y separación de banda lateral. Habilitación de la tecnología MMIC (Monolithic Microwave Integrated Circuits) mm y sub-mm. Apoyo técnico en diseño electrónico y de radio frecuencia en radiómetros de vapor de agua a 183GHz y 22 GHz. Equipamiento de laboratorio y desarrollo de capacidades de instrumentación de ondas milimétricas en CePIA. Coordinador de la Red Chilena de Instrumentación Astronómica (ChAIN).
-        </li>
-        <li class="experience-item">
-          <strong>Profesor, Colegio Olimpia Guzmán Bello</strong> <em>(Abril – Junio 2023)</em><br>
-          Planificación y docencias para alumnos de primero a cuarto año medio a base a la experimentación.
-        </li>
-        <li class="experience-item">
-          <strong>Asistente de investigación y desarrollo, Universidad de Concepción (UdeC)</strong> <em>(2022)</em><br>
-          Diseño e implementación de cuatro laboratorios docentes (Lab) para Ingeniería física: Laboratorio de Procesamiento de Señales e Imágenes, Circuitos Digitales, Electrónica, y prototipado e Impresión 3D.
-        </li>
-        <li class="experience-item">
-          <strong>Presidente del consejo estudiantil, Ciencias Físicas, departamento de Física, UdeC, Concepción</strong> <em>(2014 - 2017)</em><br>
-          Apoyo a estudiantes, miembro del comité de carrera parte del proceso de acreditación de la carrera y coordinador de charlas de divulgación científica para estudiantiles y la comunidad.
-        </li>
-      </ul>
-    </div>
+    <!-- Resto del contenido (Experiencia, Educación, Publicaciones, Eventos, Habilidades) -->
+    <!-- ... -->
 
-    <div class="section">
-      <h2>Educación</h2>
-      <ul>
-        <li><strong>MSc Astronomía</strong>, Universidad de Chile - Trabajo de curso: Real-time radio transient detection using FPGA and GPU architecture.</li>
-        <li><strong>MSc Física</strong>, Universidad de Concepción - Trabajo de curso: The Ionospheric Spectral Imager (ISI): A digital spectrometric Riometer.</li>
-        <li><strong>Ingeniería en Física</strong>, Universidad de Concepción - Trabajo de curso: El riometer digital, un instrumento para la caracterización ionosfera a partir del estudio de absorción del fondo galáctico.</li>
-        <li><strong>BS Física</strong>, Universidad de Concepción - Trabajo de curso: Electrodinámica, Mecánica cuántica, estadística, fluidos, física del estado solido, computación científica, teoría de circuitos, Dispositivos semiconductores, circuitos digitales, procesamiento de señales.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Publicaciones</h2>
-      <ul>
-        <li class="publication-item">
-          <strong>Ionospheric absorption with a 38 MHz ROACH-based array.</strong> G.Burgos, R.Reeves, A.Foppiano, R.Rodríguez, J.Parra, K.Cortes and K.Makita. Bibcode: 2020baaa..61C...868.
-        </li>
-        <li class="publication-item">
-          <strong>A Pseudo-Correlation MMIC-based 183 GHz Water Vapor Radiometer, GSMM 2018.</strong> K.Cortés, R.Reeves, M.Figueroa, P.Kangaslahti, W.Ramirez, L.Mora, G. Burgos, B. Molina. DOI:10.1109/GSMM.2018.8439550.
-        </li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Eventos</h2>
-      <ul>
-        <li class="event-item"><strong>Participante</strong>, Innovación de base científica, Universidad de Concepción, Concepción.</li>
-        <li class="event-item"><strong>Participante</strong>, Workshop METAsuperficies For Radio Astronomy, Centro de Estudios Avanzados y Extensión PUCV, Santiago Chile.</li>
-        <li class="event-item"><strong>Participante</strong>, Técnicas de Gestión de Proyectos con Fondos Estatales, Concepción.</li>
-        <li class="event-item"><strong>Participante</strong>, IEEE GRSS SUMMER SCHOOL On Digital Agricultural Technologies, Hyderabad, Telangana, India.</li>
-        <li class="event-item"><strong>Participante</strong>, Segunda reunión anual de CATA, Hotel Pullman, Santiago, Chile.</li>
-        <li class="event-item"><strong>Participante</strong>, Primer encuentro de transferencia del CATA, Hotel Pullman, Santiago, Chile.</li>
-        <li class="event-item"><strong>Expositor</strong>, Primer Workshop de Instrumentación en Geociencias, Universidad Adventista (UnACH), Chillan.</li>
-        <li class="event-item"><strong>Expositor</strong>, Exopcorma. Concepción, Chile.</li>
-        <li class="event-item"><strong>Expositor</strong>, XVI Latin American Regional IAU Meeting, Antofagasta, Chile.</li>
-        <li class="event-item"><strong>Expositor</strong>, Workshop CASPER 2018, anglong Astronomy Town, Guiyang City, China.</li>
-        <li class="event-item"><strong>Expositor</strong>, XVIII SOCHIAS Annual Meeting, Universidad de La Frontera, Temuco. Chile.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Habilidades</h2>
-      <div class="skills">
-        <p><strong>Software y programación:</strong></p>
-        <ul>
-          <li>Diseño y simulación en MATLAB, Simulink, AWR, HFSS, Feko.</li>
-          <li>Programación en Python, MATLAB, C, C++, Verilog, CUDA SystemVerilog, Fortran.</li>
-          <li>Desarrollo en Vivado, Xilinx SDK, Multisim, GNU Radio, Spider, Visual Studio Code, Conda.</li>
-          <li>Diseño de PCB en EAGLE y KiCad.</li>
-        </ul>
-        <p><strong>Gestión de proyectos:</strong></p>
-        <ul>
-          <li>Planificación estratégica y gestión de proyectos tecnológicos.</li>
-          <li>Coordinación de equipos multidisciplinarios en instrumentación y astronomía.</li>
-          <li>Elaboración y ejecución de propuestas de financiamiento en ciencia y tecnología.</li>
-          <li>Aplicación de desarrollos en la industria y transferencia de tecnología.</li>
-          <li>Liderazgo, trabajo en equipo y cumplimiento de objetivos estratégicos.</li>
-          <li>Gestión de presupuesto y supervisión del flujo de caja, optimización de costos y manejo administrativo de presupuestos, evaluación presupuestaria y adquisición de recursos.</li>
-          <li>Selección de proveedores y gestión de licitaciones, negociación, gestión de contratos y manejo de proveedores.</li>
-          <li>Gestión de grupos técnicos y científicos, ingeniería de sistemas y resolución de problemas complejos.</li>
-          <li>Microsoft Office.</li>
-        </ul>
-        <p><strong>Idiomas y comunicación científica:</strong></p>
-        <ul>
-          <li>Publicación de artículos científicos en revistas especializadas.</li>
-          <li>Presentación en conferencias internacionales.</li>
-          <li>Redacción de informes técnicos y documentación de proyectos.</li>
-          <li>Comunicación efectiva en inglés técnico (aunque tienes un nivel B1, destacar el inglés técnico puede ser útil).</li>
-        </ul>
-        <p><strong>Técnicas específicas:</strong></p>
-        <ul>
-          <li>Pruebas para instrumentación de radiofrecuencia.</li>
-          <li>Manejo y montaje de equipos como Vector Network Analyzer (VNA), espectrómetros, analizadores de espectro, fuentes de voltaje AC/DC, circuitos integrados.</li>
-          <li>Diseño de PCB, FPGA, MMIC, CPU y GPU.</li>
-          <li>Análisis de redes, procesamiento de datos y automatización de procesos.</li>
-        </ul>
-      </div>
-    </div>
   </div>
 
   <div id="en" class="hidden">
     <!-- Contenido en inglés (similar al español) -->
   </div>
 
+</div>
+
+<!-- Banner al final -->
+<div class="banner">
+  <h2>¿Interesado en trabajar juntos?</h2>
+  <p>No dudes en contactarme para discutir oportunidades de colaboración.</p>
+  <button onclick="window.location.href='mailto:gburgos.work@gmail.com'">Contáctame</button>
+  <video controls>
+    <source src="your-video.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
 </div>
 
 <script>
