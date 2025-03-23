@@ -81,19 +81,6 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-    .skill-tag {
-      background: #003366;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
     .section {
       margin-bottom: 2rem;
     }
@@ -105,9 +92,41 @@
       padding: 1rem;
       border-radius: 8px;
       margin-bottom: 1rem;
+      text-align: justify;
     }
     .section ul li strong {
       color: #003366;
+    }
+    .experience-item {
+      margin-bottom: 1.5rem;
+    }
+    .experience-item strong {
+      color: #003366;
+    }
+    .experience-item em {
+      font-style: italic;
+      color: #555;
+    }
+    .publication-item {
+      margin-bottom: 1rem;
+    }
+    .publication-item strong {
+      color: #003366;
+    }
+    .event-item {
+      margin-bottom: 1rem;
+    }
+    .event-item strong {
+      color: #003366;
+    }
+    .skills {
+      margin-bottom: 2rem;
+    }
+    .skills strong {
+      color: #003366;
+    }
+    .skills p {
+      text-align: justify;
     }
   </style>
 </head>
@@ -138,39 +157,39 @@
   <div id="es">
     <div class="section">
       <h2>Resumen</h2>
-      <p>Ingeniero en Física con MSc. en Física y estudiante de MSc. en Astronomía, con una amplia trayectoria liderando equipos de desarrollo en instrumentación astronómica de radiofrecuencia en las bandas milimétrica, submillimétrica, decimétrica y hectométrica, con aplicaciones en la industria. Especializado en el diseño, implementación y validación de hardware analógico y digital para algoritmos de interferometría, incluyendo VLBI (Very Long Baseline Interferometry), beamforming, pseudo-correlación, separación de banda lateral y análisis de transmisión y recepción (Tx/Rx) en distintos medios.</p>
+      <p style="text-align: justify;">Ingeniero en Física con MSc. en Física y estudiante de MSc. en Astronomía, con una amplia trayectoria liderando equipos de desarrollo en instrumentación astronómica de radiofrecuencia en las bandas milimétrica, submillimétrica, decimétrica y hectométrica, con aplicaciones en la industria. Especializado en el diseño, implementación y validación de hardware analógico y digital para algoritmos de interferometría, incluyendo VLBI (Very Long Baseline Interferometry), beamforming, pseudo-correlación, separación de banda lateral y análisis de transmisión y recepción (Tx/Rx) en distintos medios.</p>
     </div>
 
     <div class="section">
       <h2>Experiencia</h2>
       <ul>
-        <li>
-          <strong>Ingeniero de proyecto, Universidad de Chile</strong><br>
-          Líder de desarrollo, construcción e implementación del radio telescopio CHARTs (Canadian-Chilean array for radio transients studies). Desarrollo de hardware analógico enfocado en multiplexación por división de frecuencia (FDM) y demultiplexación (DEMUX) en la banda de 0.1 a 2.5 GHz. Desarrollo de hardware digital para algoritmos de correlación y detección de eventos transitorios en plataformas FPGA (Field-Programmable Gate Array) y GPU (Graphics Processing Unit), interconectadas mediante una red óptica de 100 GBe/s. Administración, gestión y supervisión de estudiantes. (abril 2024 – presente)
+        <li class="experience-item">
+          <strong>Ingeniero de proyecto, Universidad de Chile</strong> <em>(abril 2024 – presente)</em><br>
+          Líder de desarrollo, construcción e implementación del radio telescopio CHARTs (Canadian-Chilean array for radio transients studies). Desarrollo de hardware analógico enfocado en multiplexación por división de frecuencia (FDM) y demultiplexación (DEMUX) en la banda de 0.1 a 2.5 GHz. Desarrollo de hardware digital para algoritmos de correlación y detección de eventos transitorios en plataformas FPGA (Field-Programmable Gate Array) y GPU (Graphics Processing Unit), interconectadas mediante una red óptica de 100 GBe/s. Administración, gestión y supervisión de estudiantes.
         </li>
-        <li>
-          <strong>Investigador, Instituto de Investigaciones Tecnológicas (IIT), Universidad de Concepción</strong><br>
-          Liderazgo en el desarrollo e implementación de un radar en banda L (1-2 GHz) sobre la plataforma ZCU-208 (FPGA), incluyendo análisis teórico y numérico del funcionamiento del radar, así como simulación, fabricación y prueba de los circuitos de transmisión y recepción (Tx/Rx). (Julio 2023 – Marzo 2024)
+        <li class="experience-item">
+          <strong>Investigador, Instituto de Investigaciones Tecnológicas (IIT), Universidad de Concepción</strong> <em>(Julio 2023 – Marzo 2024)</em><br>
+          Liderazgo en el desarrollo e implementación de un radar en banda L (1-2 GHz) sobre la plataforma ZCU-208 (FPGA), incluyendo análisis teórico y numérico del funcionamiento del radar, así como simulación, fabricación y prueba de los circuitos de transmisión y recepción (Tx/Rx).
         </li>
-        <li>
-          <strong>Investigador, Laboratory for Atomic & Molecular Physics (LAMP)</strong><br>
-          Diseño, desarrollo e implementación de un controlador RF (0.01-2GHz) para láser de enfriamiento cuántico de estructura hiperfina (Fondecyt iniciacion 11200192). (Octubre – Diciembre 2023)
+        <li class="experience-item">
+          <strong>Investigador, Laboratory for Atomic & Molecular Physics (LAMP)</strong> <em>(Octubre – Diciembre 2023)</em><br>
+          Diseño, desarrollo e implementación de un controlador RF (0.01-2GHz) para láser de enfriamiento cuántico de estructura hiperfina (Fondecyt iniciacion 11200192).
         </li>
-        <li>
-          <strong>Investigador, Centro para la Instrumentación Astronómica (CePIA)</strong><br>
-          Diseño, desarrollo e implementación del back-end digital en FPGA para radiómetros de vapor de agua a 183 GHz (Zybo-220) y 22GHz (RFSoc2x2). Espectrometría analógica y digital con algoritmos de Pseudo-Correlación y separación de banda lateral. Habilitación de la tecnología MMIC (Monolithic Microwave Integrated Circuits) mm y sub-mm. Apoyo técnico en diseño electrónico y de radio frecuencia en radiómetros de vapor de agua a 183GHz y 22 GHz. Equipamiento de laboratorio y desarrollo de capacidades de instrumentación de ondas milimétricas en CePIA. Coordinador de la Red Chilena de Instrumentación Astronómica (ChAIN). (2017 – 2023)
+        <li class="experience-item">
+          <strong>Investigador, Centro para la Instrumentación Astronómica (CePIA)</strong> <em>(2017 – 2023)</em><br>
+          Diseño, desarrollo e implementación del back-end digital en FPGA para radiómetros de vapor de agua a 183 GHz (Zybo-220) y 22GHz (RFSoc2x2). Espectrometría analógica y digital con algoritmos de Pseudo-Correlación y separación de banda lateral. Habilitación de la tecnología MMIC (Monolithic Microwave Integrated Circuits) mm y sub-mm. Apoyo técnico en diseño electrónico y de radio frecuencia en radiómetros de vapor de agua a 183GHz y 22 GHz. Equipamiento de laboratorio y desarrollo de capacidades de instrumentación de ondas milimétricas en CePIA. Coordinador de la Red Chilena de Instrumentación Astronómica (ChAIN).
         </li>
-        <li>
-          <strong>Profesor, Colegio Olimpia Guzmán Bello</strong><br>
-          Planificación y docencias para alumnos de primero a cuarto año medio a base a la experimentación. (Abril – Junio 2023)
+        <li class="experience-item">
+          <strong>Profesor, Colegio Olimpia Guzmán Bello</strong> <em>(Abril – Junio 2023)</em><br>
+          Planificación y docencias para alumnos de primero a cuarto año medio a base a la experimentación.
         </li>
-        <li>
-          <strong>Asistente de investigación y desarrollo, Universidad de Concepción (UdeC)</strong><br>
-          Diseño e implementación de cuatro laboratorios docentes (Lab) para Ingeniería física: Laboratorio de Procesamiento de Señales e Imágenes, Circuitos Digitales, Electrónica, y prototipado e Impresión 3D. (2022)
+        <li class="experience-item">
+          <strong>Asistente de investigación y desarrollo, Universidad de Concepción (UdeC)</strong> <em>(2022)</em><br>
+          Diseño e implementación de cuatro laboratorios docentes (Lab) para Ingeniería física: Laboratorio de Procesamiento de Señales e Imágenes, Circuitos Digitales, Electrónica, y prototipado e Impresión 3D.
         </li>
-        <li>
-          <strong>Presidente del consejo estudiantil, Ciencias Físicas, departamento de Física, UdeC, Concepción</strong><br>
-          Apoyo a estudiantes, miembro del comité de carrera parte del proceso de acreditación de la carrera y coordinador de charlas de divulgación científica para estudiantiles y la comunidad. (2014 - 2017)
+        <li class="experience-item">
+          <strong>Presidente del consejo estudiantil, Ciencias Físicas, departamento de Física, UdeC, Concepción</strong> <em>(2014 - 2017)</em><br>
+          Apoyo a estudiantes, miembro del comité de carrera parte del proceso de acreditación de la carrera y coordinador de charlas de divulgación científica para estudiantiles y la comunidad.
         </li>
       </ul>
     </div>
@@ -188,41 +207,39 @@
     <div class="section">
       <h2>Publicaciones</h2>
       <ul>
-        <li>Ionospheric absorption with a 38 MHz ROACH-based array. G.Burgos, R.Reeves, A.Foppiano, R.Rodríguez, J.Parra, K.Cortes and K.Makita. Bibcode: 2020baaa..61C...868. ✅</li>
-        <li>A Pseudo-Correlation MMIC-based 183 GHz Water Vapor Radiometer, GSMM 2018 K.Cortés, R.Reeves, M.Figueroa, P.Kangaslahti, W.Ramirez, L.Mora, G. Burgos, B. Molina. DOI:10.1109/GSMM.2018.8439550 ✅</li>
+        <li class="publication-item">
+          <strong>Ionospheric absorption with a 38 MHz ROACH-based array.</strong> G.Burgos, R.Reeves, A.Foppiano, R.Rodríguez, J.Parra, K.Cortes and K.Makita. Bibcode: 2020baaa..61C...868.
+        </li>
+        <li class="publication-item">
+          <strong>A Pseudo-Correlation MMIC-based 183 GHz Water Vapor Radiometer, GSMM 2018.</strong> K.Cortés, R.Reeves, M.Figueroa, P.Kangaslahti, W.Ramirez, L.Mora, G. Burgos, B. Molina. DOI:10.1109/GSMM.2018.8439550.
+        </li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Eventos</h2>
       <ul>
-        <li>Participante, Innovación de base científica, Universidad de Concepción, Concepción.</li>
-        <li>Participante, Workshop METAsuperficies For Radio Astronomy, Centro de Estudios Avanzados y Extensión PUCV, Santiago Chile.</li>
-        <li>Participante, Técnicas de Gestión de Proyectos con Fondos Estatales, Concepción.</li>
-        <li>Participante, IEEE GRSS SUMMER SCHOOL On Digital Agricultural Technologies, Hyderabad, Telangana, India.</li>
-        <li>Participante, Segunda reunión anual de CATA, Hotel Pullman, Santiago, Chile.</li>
-        <li>Participante, Primer encuentro de transferencia del CATA, Hotel Pullman, Santiago, Chile.</li>
-        <li>Expositor, Primer Workshop de Instrumentación en Geociencias, Universidad Adventista (UnACH), Chillan.</li>
-        <li>Expositor, Exopcorma. Concepción, Chile.</li>
-        <li>Expositor, XVI Latin American Regional IAU Meeting, Antofagasta, Chile.</li>
-        <li>Expositor, Workshop CASPER 2018, anglong Astronomy Town, Guiyang City, China.</li>
-        <li>Expositor, XVIII SOCHIAS Annual Meeting, Universidad de La Frontera, Temuco. Chile.</li>
+        <li class="event-item"><strong>Participante</strong>, Innovación de base científica, Universidad de Concepción, Concepción.</li>
+        <li class="event-item"><strong>Participante</strong>, Workshop METAsuperficies For Radio Astronomy, Centro de Estudios Avanzados y Extensión PUCV, Santiago Chile.</li>
+        <li class="event-item"><strong>Participante</strong>, Técnicas de Gestión de Proyectos con Fondos Estatales, Concepción.</li>
+        <li class="event-item"><strong>Participante</strong>, IEEE GRSS SUMMER SCHOOL On Digital Agricultural Technologies, Hyderabad, Telangana, India.</li>
+        <li class="event-item"><strong>Participante</strong>, Segunda reunión anual de CATA, Hotel Pullman, Santiago, Chile.</li>
+        <li class="event-item"><strong>Participante</strong>, Primer encuentro de transferencia del CATA, Hotel Pullman, Santiago, Chile.</li>
+        <li class="event-item"><strong>Expositor</strong>, Primer Workshop de Instrumentación en Geociencias, Universidad Adventista (UnACH), Chillan.</li>
+        <li class="event-item"><strong>Expositor</strong>, Exopcorma. Concepción, Chile.</li>
+        <li class="event-item"><strong>Expositor</strong>, XVI Latin American Regional IAU Meeting, Antofagasta, Chile.</li>
+        <li class="event-item"><strong>Expositor</strong>, Workshop CASPER 2018, anglong Astronomy Town, Guiyang City, China.</li>
+        <li class="event-item"><strong>Expositor</strong>, XVIII SOCHIAS Annual Meeting, Universidad de La Frontera, Temuco. Chile.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>Habilidades</h2>
       <div class="skills">
-        <span class="skill-tag">MATLAB</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Verilog</span>
-        <span class="skill-tag">C++</span>
-        <span class="skill-tag">CUDA</span>
-        <span class="skill-tag">Vivado</span>
-        <span class="skill-tag">KiCad</span>
-        <span class="skill-tag">Diseño de PCB</span>
-        <span class="skill-tag">Instrumentación RF</span>
-        <span class="skill-tag">Gestión de proyectos</span>
+        <p><strong>Software y programación:</strong> Diseño y simulación en MATLAB, Simulink, AWR, HFSS, Feko; Programación en Python, MATLAB, C, C++, Verilog, CUDA SystemVerilog, Fortran; Desarrollo en Vivado, Xilinx SDK, Multisim, GNU Radio, Spider, Visual Studio Code, Conda; Diseño de PCB en EAGLE y KiCad.</p>
+        <p><strong>Gestión de proyectos:</strong> Planificación estratégica y gestión de proyectos tecnológicos, Coordinación de equipos multidisciplinarios en instrumentación y astronomía; Elaboración y ejecución de propuestas de financiamiento en ciencia y tecnología; Aplicación de desarrollos en la industria y transferencia de tecnología; Liderazgo, trabajo en equipo y cumplimiento de objetivos estratégicos; Gestión de presupuesto y supervisión del flujo de caja, optimización de costos y manejo administrativo de presupuestos, evaluación presupuestaria y adquisición de recursos; Selección de proveedores y gestión de licitaciones, negociación, gestión de contratos y manejo de proveedores; Gestión de grupos técnicos y científicos, ingeniería de sistemas y resolución de problemas complejos, Microsoft office.</p>
+        <p><strong>Idiomas y comunicación científica:</strong> Publicación de artículos científicos en revistas especializadas; Presentación en conferencias internacionales; Redacción de informes técnicos y documentación de proyectos; Comunicación efectiva en inglés técnico (aunque tienes un nivel B1, destacar el inglés técnico puede ser útil).</p>
+        <p><strong>Técnicas específicas:</strong> Pruebas para instrumentación de radiofrecuencia, manejo y montaje de equipos como Vector Network Analyzer (VNA), espectrómetros, analizadores de espectro, fuentes de voltaje AC/DC, circuitos integrados, diseño de PCB, FPGA, MMIC, CPU y GPU. Análisis de redes, procesamiento de datos y automatización de procesos.</p>
       </div>
     </div>
   </div>
